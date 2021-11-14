@@ -7,9 +7,14 @@ import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import {keyframes} from "styled-components"
+import { useState } from 'react';
 
 function App() {
-  // const [isToggled, setIsToggled] = useState(true);
+  const [projectMenuOpen, setProjectMenuOpen] = useState(false)
+  const [aboutMenuOpen, setAboutMenuOpen] = useState(false)
+  // const [projectMenuOpen, setProjectMenuOpen] = useState(false)
+  // const [projectMenuOpen, setProjectMenuOpen] = useState(false)
+
   const styles = useSpring({
     loop: true,
     to: [
@@ -19,6 +24,42 @@ function App() {
     from: { opacity: 0, color: 'red' },
     delay: 200,
   })
+
+  function toggleProjectMenu(){
+    setProjectMenuOpen(!projectMenuOpen)
+    console.log(projectMenuOpen)
+  }
+
+  function toggleContactMenu(){
+    alert("My Contact list")
+  }
+  function toggleSkillsMenu(){
+    alert("My Skills list")
+  }
+  function toggleAboutMenu(){
+    setAboutMenuOpen(!aboutMenuOpen)
+    console.log(aboutMenuOpen)
+  }
+
+  function noAboutMenu(){
+    return(
+      <>
+       <AboutButtonStyler onMouseEnter={toggleAboutMenu}>About</AboutButtonStyler>
+      </>
+    )
+  }
+
+  function showAboutMenu(){
+    return(
+      <>
+       <AboutButtonStyler onMouseLeave={toggleAboutMenu}>Go away</AboutButtonStyler>
+       <div><aboutMenu>IM HERE</aboutMenu></div>
+      </>
+    )
+  }
+
+
+
   // ...
   return (
     <AppWrapper>
@@ -35,10 +76,10 @@ function App() {
       {/* <Projects />
       <Skills />
       <Contact /> */}
-      <TriangleUp><AboutButtonStyler>About</AboutButtonStyler></TriangleUp>
-      <TriangleLeft><ProjectsButtonStyler>Projects</ProjectsButtonStyler></TriangleLeft>
-      <TriangleDown><ContactButtonStyler>Contact</ContactButtonStyler></TriangleDown>
-      <TriangleRight><SkillsButtonStyler>Skills</SkillsButtonStyler></TriangleRight>
+      <TriangleUp>{aboutMenuOpen? noAboutMenu() :  showAboutMenu() }</TriangleUp>
+      <TriangleLeft>{projectMenuOpen? <ProjectsButtonStyler onMouseEnter={toggleProjectMenu}>Projects</ProjectsButtonStyler> :<ProjectsButtonStyler onMouseLeave={toggleProjectMenu}>Go away</ProjectsButtonStyler>}</TriangleLeft>
+      <TriangleDown><ContactButtonStyler onClick={toggleContactMenu}>Contact</ContactButtonStyler></TriangleDown>
+      <TriangleRight><SkillsButtonStyler onClick={toggleSkillsMenu}>Skills</SkillsButtonStyler></TriangleRight>
 
 
     </AppWrapper>
@@ -84,30 +125,34 @@ const ImgStyler=styled.img`
 const TriangleLeft = styled.div `
       width: 0;
       height: 0;
-      border-top: 50px solid transparent;
-      border-right: 150px solid red;
-      border-bottom: 50px solid transparent;
-      margin-left: 41vw;
-      margin-top: 2vh;
+      border-top: 100px solid transparent;
+      border-right: 150px solid;
+      border-right-color: #4682B4;
+      border-bottom: 100px solid transparent;
+      margin-left: 40vw;
+      margin-top: 0vh;
+      border-radius: 50%;
 `
 
 const TriangleRight = styled.div `
     width: 0;
       height: 0;
-      border-top: 50px solid transparent;
+      border-top: 100px solid transparent;
       border-left: 150px solid red;
-      border-bottom: 50px solid transparent;
-      margin-left: 56vw;
-      margin-top: -14vw
+      border-bottom: 100px solid transparent;
+      margin-left: 59vw;
+      margin-top: -19vw;
+      border-radius: 50%;
 `
 
 const TriangleDown = styled.div `
- width: 0;
+      width: 0;
       height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
       border-top: 150px solid red;
-      margin-left: 50vw;
+      border-radius: 50%;
+      margin-left: 48.5vw;
       margin-top: 2vh;
       position: relative;
       z-index: 1;
@@ -116,21 +161,22 @@ const TriangleDown = styled.div `
 const TriangleUp = styled.div `
   width: 0;
   height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
   border-bottom: 150px solid red;
-  margin-left: 50vw;
+  margin-left: 48.5vw;
+  border-radius: 50%;
 `
 
 
-const ImgContainer = styled.div`
-  margin-left: 70vw;
-  width: 15%;
-  height: 12%;
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-`
+// const ImgContainer = styled.div`
+//   margin-left: 70vw;
+//   width: 15%;
+//   height: 12%;
+//   display: flex;
+//   flex-direction: row;
+//   position: absolute;
+// `
 
 const AboutButtonStyler=styled.button`
   background-color: red;
@@ -139,6 +185,9 @@ const AboutButtonStyler=styled.button`
   font-size: 15px;
   margin-top: 11vh;
   margin-left: -1.5vw;
+  &:hover{
+    color: black;
+  }
 `
 
 const ContactButtonStyler=styled.button`
@@ -150,6 +199,9 @@ const ContactButtonStyler=styled.button`
   margin-top: -13vh;
   position: absolute;
   z-index: 2;
+  &:hover{
+    color: black;
+  }
 `
 
 const ProjectsButtonStyler=styled.button`
@@ -161,6 +213,9 @@ const ProjectsButtonStyler=styled.button`
   margin-top: -1vh;
   position: absolute;
   z-index: 2;
+  &:hover{
+    color: black;
+  }
 `
 
 const SkillsButtonStyler=styled.button`
@@ -172,5 +227,14 @@ const SkillsButtonStyler=styled.button`
   margin-top: -1vh;
   position: absolute;
   z-index: 2;
+  &:hover{
+    color: black;
+  }
+`
+
+const aboutMenu =styled.h1`
+  background-color: white;
+  height: 20px;
+  width: 50vw;
 `
 
