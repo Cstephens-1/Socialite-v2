@@ -53,7 +53,7 @@ function App() {
     return(
       <>
        <AboutButtonStyler onMouseLeave={toggleAboutMenu}>Go away</AboutButtonStyler>
-       <div><aboutMenu>IM HERE</aboutMenu></div>
+       <AboutMenu><h5>I'm HERE!</h5></AboutMenu>
       </>
     )
   }
@@ -232,9 +232,12 @@ const SkillsButtonStyler=styled.button`
   }
 `
 
-const aboutMenu =styled.h1`
+const AboutMenu = styled.h1`
   background-color: white;
-  height: 20px;
-  width: 50vw;
+  height: 200px;
+  width: 500px;
+  margin-top: -20vh; 
 `
+
+
 
