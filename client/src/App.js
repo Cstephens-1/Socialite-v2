@@ -22,19 +22,24 @@ function App() {
   // ...
   return (
     <AppWrapper>
-      <animated.div style={styles}>I will fade in and out</animated.div>
-      <ImgContainer>
+      {/* <animated.div style={styles}>I will fade in and out</animated.div> */}
+      {/* <ImgContainer>
         <ButtonStyler>About</ButtonStyler>
         <ButtonStyler>Projects</ButtonStyler>
         
         <ButtonStyler>Skills</ButtonStyler>
         <ButtonStyler>Contact</ButtonStyler>
-      </ImgContainer>
+      </ImgContainer> */}
       <ImgStyler src={myname} alt="" />
-      {/* <About />
-      <Projects />
+      <About />
+      {/* <Projects />
       <Skills />
       <Contact /> */}
+      <TriangleUp><AboutButtonStyler>About</AboutButtonStyler></TriangleUp>
+      <TriangleLeft><ProjectsButtonStyler>Projects</ProjectsButtonStyler></TriangleLeft>
+      <TriangleDown><ContactButtonStyler>Contact</ContactButtonStyler></TriangleDown>
+      <TriangleRight><SkillsButtonStyler>Skills</SkillsButtonStyler></TriangleRight>
+
 
     </AppWrapper>
   )
@@ -53,7 +58,7 @@ export default App;
 
 
 const AppWrapper = styled.div`
-background-color: #2a3132;
+background-color: #111;
 top: 0;
 bottom: 0;
 left: 0;
@@ -76,23 +81,96 @@ const ImgStyler=styled.img`
  position: absolute;
 `
 
+const TriangleLeft = styled.div `
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-right: 150px solid red;
+      border-bottom: 50px solid transparent;
+      margin-left: 41vw;
+      margin-top: 2vh;
+`
 
+const TriangleRight = styled.div `
+    width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-left: 150px solid red;
+      border-bottom: 50px solid transparent;
+      margin-left: 56vw;
+      margin-top: -14vw
+`
 
+const TriangleDown = styled.div `
+ width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 150px solid red;
+      margin-left: 50vw;
+      margin-top: 2vh;
+      position: relative;
+      z-index: 1;
+`
+
+const TriangleUp = styled.div `
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 150px solid red;
+  margin-left: 50vw;
+`
 
 
 const ImgContainer = styled.div`
-  margin-left: 28vw;
+  margin-left: 70vw;
   width: 15%;
-  height: 15%;
+  height: 12%;
   display: flex;
   flex-direction: row;
-  /* position: fixed; */
+  position: absolute;
 `
 
-const ButtonStyler=styled.button`
-  background-color: #2a3132;
+const AboutButtonStyler=styled.button`
+  background-color: red;
   border-style: none;
   color: white;
-  margin: 20px;
-  font-size: 25px;
+  font-size: 15px;
+  margin-top: 11vh;
+  margin-left: -1.5vw;
 `
+
+const ContactButtonStyler=styled.button`
+  background-color: red;
+  border-style: none;
+  color: white;
+  font-size: 15px;
+  margin-left: -1.7vw;
+  margin-top: -13vh;
+  position: absolute;
+  z-index: 2;
+`
+
+const ProjectsButtonStyler=styled.button`
+  background-color: red;
+  border-style: none;
+  color: white;
+  font-size: 15px;
+  margin-left: 3vw;
+  margin-top: -1vh;
+  position: absolute;
+  z-index: 2;
+`
+
+const SkillsButtonStyler=styled.button`
+  background-color: red;
+  border-style: none;
+  color: white;
+  font-size: 15px;
+  margin-left: -7vw;
+  margin-top: -1vh;
+  position: absolute;
+  z-index: 2;
+`
+

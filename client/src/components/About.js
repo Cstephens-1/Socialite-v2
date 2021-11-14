@@ -3,7 +3,7 @@
 function About(){
     return(
         <>
-        <h1> test in About</h1>
+        <h1>Hi, I'm Cory. Welcome to my portfolio</h1>
         </>
     )
 }
