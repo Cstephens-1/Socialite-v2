@@ -22,14 +22,14 @@ function Contact(){
     function showContactMenu(){
         return(
             <>
-                <ContactButtonStyler>Go away</ContactButtonStyler>
-                <ContactMenu toggleContactMenu={toggleContactMenu}/>
+                <ContactButtonStyler>Contact</ContactButtonStyler>
+                <ContactMenu setContactMenuOpen={setContactMenuOpen}/>
             </>
         )
     }
 
     return(
-            <TriangleDown onMouseLeave={toggleContactMenu}>{contactMenuOpen? showContactMenu() : noContactMenu()}</TriangleDown>
+            <TriangleDown onMouseLeave={()=>{setContactMenuOpen(false)}}>{contactMenuOpen? showContactMenu() : noContactMenu()}</TriangleDown>
         )
 }
 
@@ -46,7 +46,8 @@ const TriangleDown = styled.div `
       margin-top: 2vh;
       position: relative;
       z-index: 1;
-      padding-bottom: 50px;
+      padding-bottom: 60px;
+      /* background-color: blue; */
 `
 
 const ContactButtonStyler=styled.button`

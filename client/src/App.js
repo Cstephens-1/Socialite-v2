@@ -49,7 +49,7 @@ export default App;
 
 
 const AppWrapper = styled.div`
-background-color: #111;
+background-color: black;
 top: 0;
 bottom: 0;
 left: 0;
