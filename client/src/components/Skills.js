@@ -22,7 +22,7 @@ function toggleSkillsMenu(){
     return(
       <>
        <SkillsButtonStyler onMouseLeave={toggleSkillsMenu}>Go away</SkillsButtonStyler>
-       <SkillsMenu><h5>I'm the skills menu!!</h5></SkillsMenu>
+       <SkillsMenu><h5>I'm the skills menu!</h5></SkillsMenu>
       </>
     )
   }
@@ -43,7 +43,7 @@ const TriangleRight = styled.div `
       border-left: 150px solid red;
       border-bottom: 100px solid transparent;
       margin-left: 59vw;
-      margin-top: -19vw;
+      margin-top: -21vw;
       border-radius: 50%;
 `
 
@@ -63,8 +63,9 @@ const SkillsButtonStyler=styled.button`
 
 const SkillsMenu = styled.h1`
   background-color: white;
-  height: 200px;
+  height: 700px;
   width: 500px;
-  margin-top: -20vh; 
-  margin-left: 10vw;
+  margin-top: -30vh; 
+  margin-left: 5vw;
+  border-radius: 12px;
 `

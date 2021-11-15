@@ -1,5 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
+import AboutMenu from "./AboutMenu"
 
 function About(){
     const [aboutMenuOpen, setAboutMenuOpen] = useState(false)
@@ -22,7 +23,7 @@ function About(){
         return(
             <>
                 <AboutButtonStyler onMouseLeave={toggleAboutMenu}>Go away</AboutButtonStyler>
-                <AboutMenu><h5>I'm the about menu!</h5></AboutMenu>
+                <AboutMenu />
             </>
         )
     }
@@ -54,12 +55,4 @@ const AboutButtonStyler=styled.button`
   &:hover{
     color: black;
   }
-`
-
-const AboutMenu = styled.h1`
-  background-color: white;
-  height: 200px;
-  width: 500px;
-  margin-top: -20vh; 
-  margin-left: 10vw;
 `

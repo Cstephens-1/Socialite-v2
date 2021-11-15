@@ -1,10 +1,11 @@
 import { useState } from "react"
 import styled from "styled-components"
+import ContactMenu from "./ContactMenu"
 
 function Contact(){
+    //about menu functionality
     const [contactMenuOpen, setContactMenuOpen] = useState(false)
 
-    //about menu functionality
     function toggleContactMenu(){
         setContactMenuOpen(!contactMenuOpen)
         console.log(contactMenuOpen)
@@ -21,16 +22,14 @@ function Contact(){
     function showContactMenu(){
         return(
             <>
-                <ContactButtonStyler onMouseLeave={toggleContactMenu}>Go away</ContactButtonStyler>
-                <ContactMenu><h5>I'm the Contact menu!</h5></ContactMenu>
+                <ContactButtonStyler>Go away</ContactButtonStyler>
+                <ContactMenu toggleContactMenu={toggleContactMenu}/>
             </>
         )
     }
 
-
-
     return(
-            <TriangleDown>{contactMenuOpen? showContactMenu() : noContactMenu()}</TriangleDown>
+            <TriangleDown onMouseLeave={toggleContactMenu}>{contactMenuOpen? showContactMenu() : noContactMenu()}</TriangleDown>
         )
 }
 
@@ -47,6 +46,7 @@ const TriangleDown = styled.div `
       margin-top: 2vh;
       position: relative;
       z-index: 1;
+      padding-bottom: 50px;
 `
 
 const ContactButtonStyler=styled.button`
@@ -61,12 +61,4 @@ const ContactButtonStyler=styled.button`
   &:hover{
     color: black;
   }
-`
-
-const ContactMenu = styled.h1`
-  background-color: white;
-  height: 200px;
-  width: 500px;
-  margin-top: -20vh; 
-  margin-left: 10vw;
 `

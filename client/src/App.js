@@ -11,6 +11,8 @@ import {keyframes} from "styled-components"
 
 function App() {
 
+  
+
   const styles = useSpring({
     loop: true,
     to: [
@@ -24,10 +26,12 @@ function App() {
   return (
     <AppWrapper>
       {/* <animated.div style={styles}>I will fade in and out</animated.div> */}
-      <About />
-      <Projects />
-      <Contact />
-      <Skills />
+      <MenuWrapper>
+        <About />
+        <Projects />
+        <Contact />
+        <Skills />
+      </MenuWrapper>
     </AppWrapper>
   )
 }
@@ -76,5 +80,8 @@ margin-top: -15vh;
 //   position: absolute;
 // `
 
-
+const MenuWrapper = styled.div`
+  margin-top: 20vh;
+  text-align: center;
+`
 

@@ -45,7 +45,7 @@ const TriangleLeft = styled.div `
     height: 0;
     border-top: 100px solid transparent;
     border-right: 150px solid;
-    border-right-color: #4682B4;
+    border-right-color: red;
     border-bottom: 100px solid transparent;
     margin-left: 40vw;
     margin-top: 0vh;
@@ -68,8 +68,9 @@ const ProjectsButtonStyler=styled.button`
 
 const ProjectsMenu = styled.h1`
   background-color: white;
-  height: 200px;
+  height: 800px;
   width: 500px;
-  margin-top: -20vh; 
-  margin-left: 10vw;
+  margin-top: -35vh; 
+  margin-left: -30vw;
+  border-radius: 15px;
 `
