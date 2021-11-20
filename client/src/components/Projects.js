@@ -1,5 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
+import ProjectsMenu from "./ProjectsMenu"
 
 function Projects(){
 
@@ -23,7 +24,7 @@ function Projects(){
         return(
           <>
            <ProjectsButtonStyler onMouseLeave={toggleProjectsMenu}>Go away</ProjectsButtonStyler>
-           <ProjectsMenu><h5>I'm the Projects menu!!</h5></ProjectsMenu>
+           <ProjectsMenu />
           </>
         )
       }
@@ -56,21 +57,22 @@ const ProjectsButtonStyler=styled.button`
   background-color: red;
   border-style: none;
   color: white;
-  font-size: 15px;
-  margin-left: 3vw;
+  font-size: 18px;
+  margin-left: 2vw;
   margin-top: -1vh;
   position: absolute;
+  font-family: 'Comfortaa', cursive;
   z-index: 2;
   &:hover{
     color: black;
   }
 `
 
-const ProjectsMenu = styled.h1`
-  background-color: white;
-  height: 800px;
-  width: 500px;
-  margin-top: -35vh; 
-  margin-left: -30vw;
-  border-radius: 15px;
-`
+// const ProjectsMenu = styled.h1`
+//   background-color: white;
+//   height: 800px;
+//   width: 500px;
+//   margin-top: -35vh; 
+//   margin-left: -30vw;
+//   border-radius: 15px;
+// `

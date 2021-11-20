@@ -47,17 +47,18 @@ const TriangleDown = styled.div `
       position: relative;
       z-index: 1;
       padding-bottom: 60px;
-      /* background-color: blue; */
+      background-color: black;
 `
 
 const ContactButtonStyler=styled.button`
   background-color: red;
   border-style: none;
   color: white;
-  font-size: 15px;
-  margin-left: -1.7vw;
-  margin-top: -13vh;
+  font-size: 18px;
+  margin-left: -2.4vw;
+  margin-top: -12vh;
   position: absolute;
+  font-family: 'Comfortaa', cursive;
   z-index: 2;
   &:hover{
     color: black;

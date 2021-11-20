@@ -1,10 +1,24 @@
+import { useTransition , config, useSpring} from "@react-spring/core"
 import { useState } from "react"
 import styled from "styled-components"
 import AboutMenu from "./AboutMenu"
 
 function About(){
+
     const [aboutMenuOpen, setAboutMenuOpen] = useState(false)
 
+
+
+    const transition = useSpring({
+        config: {...config.stiff},
+        from: {opacity: 0, height: 0, width: 100, color: "white"},
+        to: {
+            opacity: 1, height: 800, width: 100, color:"blue"
+        }
+    })
+
+
+    
     //about menu functionality
     function toggleAboutMenu(){
         setAboutMenuOpen(!aboutMenuOpen)
@@ -49,9 +63,10 @@ const AboutButtonStyler=styled.button`
   background-color: red;
   border-style: none;
   color: white;
-  font-size: 15px;
-  margin-top: 11vh;
-  margin-left: -1.5vw;
+  font-size: 18px;
+  margin-top: 10vh;
+  margin-left: -1.9vw;
+  font-family: 'Comfortaa', cursive;
   &:hover{
     color: black;
   }

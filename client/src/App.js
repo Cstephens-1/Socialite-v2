@@ -11,21 +11,28 @@ import {keyframes} from "styled-components"
 
 function App() {
 
+  const springProps = useSpring({
+    transform: 'translateX(100px)',
+    from: {
+      transform: 'translateX(0px)', color: "green",
+    }
+  })
   
 
   const styles = useSpring({
     loop: true,
     to: [
-      { opacity: 1, color: '#ffaaee' },
-      { opacity: 0, color: 'rgb(14,26,19)' },
+      { opacity: 1, color: 'green' },
+      { opacity: .5, color: 'red' },
+      
     ],
-    from: { opacity: 0, color: 'red' },
-    delay: 200,
+    from: { opacity: 1, color: 'red' },
+    delay: 2000,
   })
 
   return (
     <AppWrapper>
-      {/* <animated.div style={styles}>I will fade in and out</animated.div> */}
+      <animated.div style={springProps}>Cory Stephens</animated.div>
       <MenuWrapper>
         <About />
         <Projects />
