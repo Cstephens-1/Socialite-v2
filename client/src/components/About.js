@@ -36,7 +36,7 @@ function About(){
     function showAboutMenu(){
         return(
             <>
-                <AboutButtonStyler onMouseLeave={toggleAboutMenu}>Go away</AboutButtonStyler>
+                <AboutButtonStyler onMouseLeave={toggleAboutMenu}>About</AboutButtonStyler>
                 <AboutMenu />
             </>
         )

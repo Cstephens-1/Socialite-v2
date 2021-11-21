@@ -29,7 +29,7 @@ function toggleSkillsMenu(){
   function showSkillsMenu(){
     return(
       <>
-       <SkillsButtonStyler onMouseLeave={toggleSkillsMenu}>Go away</SkillsButtonStyler>
+       <SkillsButtonStyler onMouseLeave={toggleSkillsMenu}>Skills</SkillsButtonStyler>
        <SkillsMenu>
           <UlStyler>
           
@@ -78,37 +78,6 @@ const TriangleRight = styled.div `
       background-color: black;
 `
 
-const MoveIt = keyframes`
-   0%
-  {
-    transform: translateX(25px);
-    opacity: 1;
-    width: 100px;
-    height: 20px;
-  }
-  50%
-  {
-    transform: translateX(50px);
-    height: 10px;
-    width: 50px,
-    opacity: 1;
-  }
-  75%
-  {
-    transform: translateX(75px);
-    height: 5px;
-    width: 25px,
-    opacity: 1;
-  }
-  100%
-  {
-    transform: translateX(125px);
-    height: 1px;
-    width: 0px;
-    opacity: 1
-  }
-`
-
 const SkillsButtonStyler=styled.button`
   background-color: red;
   border-style: none;
@@ -120,13 +89,7 @@ const SkillsButtonStyler=styled.button`
   font-family: 'Comfortaa', cursive;
   z-index: 2;
   &:hover{
-    font-size: 0px;
-    background-color: cornflowerblue;
-    width: 30px;
-    height: 20px;
-    margin-top: 1px;
-    animation: ${MoveIt} 1s, 0s infinite;
-    animation-fill-mode: forwards;
+    color:black
   }
 `
 
@@ -139,8 +102,6 @@ const SkillsMenu = styled.h1`
   margin-top: -25vh; 
   border-radius: 12px;
   position: relative;
-  
-    
 `
 
 const LiStyler = styled.li`

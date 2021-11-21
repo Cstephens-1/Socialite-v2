@@ -23,8 +23,8 @@ function Projects(){
       function showProjectsMenu(){
         return(
           <>
-           <ProjectsButtonStyler onMouseLeave={toggleProjectsMenu}>Go away</ProjectsButtonStyler>
-           <ProjectsMenu />
+           <ProjectsButtonStyler>Go away</ProjectsButtonStyler>
+           <ProjectsMenu setProjectsMenuOpen={setProjectsMenuOpen}/>
           </>
         )
       }
@@ -35,7 +35,7 @@ function Projects(){
 
 
     return(
-        <TriangleLeft>{projectsMenuOpen? showProjectsMenu() : noProjectsMenu()}</TriangleLeft>
+        <TriangleLeft onMouseLeave={()=>{setProjectsMenuOpen(false)}}>{projectsMenuOpen? showProjectsMenu() : noProjectsMenu()}</TriangleLeft>
     )
 }
 
@@ -44,13 +44,15 @@ export default Projects
 const TriangleLeft = styled.div `
     width: 0;
     height: 0;
+
     border-top: 100px solid transparent;
     border-right: 150px solid;
     border-right-color: red;
     border-bottom: 100px solid transparent;
-    margin-left: 40vw;
+    margin-left: 37vw;
     margin-top: 0vh;
     border-radius: 50%;
+    padding-left: 60px
 `
 
 const ProjectsButtonStyler=styled.button`

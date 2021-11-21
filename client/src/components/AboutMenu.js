@@ -7,9 +7,10 @@ function AboutMenu(){
     return(
       <AboutMenuStyler>
   
-          <p>Full Stack Developer in React and Rails. Cory recently graduated from Flatiron School after a career change from Director of Recreational Programs at a gymnastics facility.</p>
-          <p>When not coding, Cory loves to travel, experience new cultures, and explore nature. A certified scuba diver, Cory hopes to dive the Barrier Reef before it's gone, and swim with whale sharks.</p>
-          <p>His most impactful experience was volunteering at an elephant sanctuary in Thailand, and it's a dream of his to use his skills to help assist animal rescues in additional ways.</p>
+          <p>Cory is a Full Stack Software Developer based in NYC.</p>
+          <p>After 18 years as a gymnastics coach and program director in New Orleans, Cory was ready for a career change.</p>
+          <p>When he isn't coding, Cory enjoys going to the theatre and traveling the world with his partner and pup.</p>
+          <p></p>
       
      </AboutMenuStyler>
     )
@@ -19,11 +20,13 @@ export default AboutMenu
 
 
 const AboutMenuStyler = styled.h1`
-  background-color: white;
-  height: 400px;
+
+color: cornflowerblue;
   width: 500px;
   margin-top: -30vh; 
-  margin-left: 16vw;
+  margin-left: 3vw;
   border-radius: 12px;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 100
 `
