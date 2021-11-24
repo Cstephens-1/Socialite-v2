@@ -9,8 +9,8 @@ function AboutMenu(){
   
           <p>Cory is a Full Stack Software Developer based in NYC.</p>
           <p>After 18 years as a gymnastics coach and program director in New Orleans, Cory was ready for a career change.</p>
-          <p>When he isn't coding, Cory enjoys going to the theatre and traveling the world with his partner and pup.</p>
-          <p></p>
+          <p>When he isn't coding, Cory enjoys going to the theatre, exploring New York, and going on adventures around the globe with his partner and pup.</p>
+        
       
      </AboutMenuStyler>
     )

@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import {keyframes} from "styled-components"
 
 
+
 function App() {
 
   const springProps = useSpring({
@@ -17,6 +18,16 @@ function App() {
       transform: 'translateX(0px)', color: "green",
     }
   })
+
+  const sizes = {
+    mobileS: '320px',
+    mobileM: '375px',
+    mobileL: '425px',
+    tablet: '768px',
+    laptop: '1024px',
+    laptopL: '1440px',
+    desktop: '2560px',
+  };
   
 
   const styles = useSpring({
@@ -32,7 +43,8 @@ function App() {
 
   return (
     <AppWrapper>
-      <animated.div style={springProps}>Cory Stephens</animated.div>
+        <h1>Cory Stephens</h1>
+        <p>Software Developer</p>
       <MenuWrapper>
         <About />
         <Projects />
@@ -62,6 +74,7 @@ bottom: 0;
 left: 0;
 right: 0;
 position: absolute;
+
 `
 const MoveImage = keyframes`
   0% {width: 100%; height: 100%; margin-top: 20vh;}
@@ -70,12 +83,13 @@ const MoveImage = keyframes`
   100%{width: 10%; height: 10%; margin-right: 98vw; top: 0; opacity: 30%; }
 `
 
-const ImgStyler=styled.img`
+const ImgStyler=styled.h1`
 height: 100px;
 width: 225;
 position: absolute;
 margin-left: 48.5vw;
 margin-top: -15vh;
+background-color: blue;
 `
 
 // const ImgContainer = styled.div`
@@ -88,7 +102,10 @@ margin-top: -15vh;
 // `
 
 const MenuWrapper = styled.div`
+@media (max-width: 768px) {
   margin-top: 20vh;
-  text-align: center;
+  }
+  
+ 
 `
 
